@@ -19,7 +19,7 @@ class BooksController extends Controller
                     'model'=>$book,
                     'form_url'=>route('books.destroy', $book->id),
                     'edit_url'=>route('books.edit', $book->id),
-                    'confirm_message'=>'Yakin Mau Menghapus' .$book->title. '?'
+                    'confirm_message'=>'Anda Serius Menghapus!!' .$book->title. '?'
                     ]);
             })->make(true);
         }

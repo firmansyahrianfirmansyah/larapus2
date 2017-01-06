@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+Route::get('/home1', 'SayaController@inn');
+
+Route::group(['middleware'=>'web'], function() {
+	Route::group(['prefix'=>'admin', 'middleware'=>['auth', 'role:admin']], function()
+		{
+			Route::resource('authors', 'AuthorsController');
+			Route::resource('books', 'booksController');
+		});
+});
