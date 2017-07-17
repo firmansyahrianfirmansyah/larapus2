@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
 	<div class="row">
@@ -8,11 +7,10 @@
 				<li><a href="{{ url('/home') }}">Dashboard</a></li>
 				<li class="active">Penulis</li>
 			</ul>
-			<div class="panel panel-default">
+			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h2 class="panel-title">Penulis</h2>
 				</div>
-
 				<div class="panel-body">
 					<p><a class="btn btn-primary" href="{{ route('authors.create') }}">Tambah</a></p>
 					{!! $html->table(['class'=>'table-striped']) !!}
@@ -24,5 +22,5 @@
 @endsection
 
 @section('scripts')
-	{!! $html->scripts() !!}
+{!! $html->scripts() !!}
 @endsection
