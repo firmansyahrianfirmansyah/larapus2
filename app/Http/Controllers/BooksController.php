@@ -145,7 +145,7 @@ class BooksController extends Controller
     {
         $book=Book::find($id);
         $cover=$book->cover;
-        if(!$book->delete()) return redirect()->back();
+        if($book->delete()) return redirect()->back();
         if($cover)
         {
             $old_cover=$book->cover;
